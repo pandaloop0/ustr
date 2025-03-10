@@ -2,7 +2,11 @@
 
 ## Pandaloop Note
 This is a fork of `ustr` which provides more access to internals such as the hasher to allow usage in an IndexMap etc.
+The goal is to also provide a way to clear the memory such that there is no one global ustr map but multiple instances through which strings can be shared.
 
+We use `ustr` in scenery because it is extremely fast, we don't really use the ffi part and might even remove these if performance can be gained.
+
+## Continuation of original Readme
 Fast, FFI-friendly string interning.
 
 [![Build Status]][travis] [![Latest Version]][crates.io] [![Docs Badge]][docs.rs]
