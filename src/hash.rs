@@ -5,16 +5,18 @@ use std::{
     hash::{BuildHasherDefault, Hasher},
 };
 
+/// BuildHasher for the IdentityHasher
+pub type BuildIdentityHasher = BuildHasherDefault<IdentityHasher>;
+
 /// A standard `HashMap` using `Ustr` as the key type with a custom `Hasher`
 /// that just uses the precomputed hash for speed instead of calculating it.
-pub type UstrMap<V> = HashMap<Ustr, V, BuildHasherDefault<IdentityHasher>>;
+pub type UstrMap<V> = HashMap<Ustr, V, BuildIdentityHasher >;
 
 /// A standard `HashSet` using `Ustr` as the key type with a custom `Hasher`
 /// that just uses the precomputed hash for speed instead of calculating it.
-pub type UstrSet = HashSet<Ustr, BuildHasherDefault<IdentityHasher>>;
+pub type UstrSet = HashSet<Ustr, BuildIdentityHasher >;
 
 /// The worst hasher in the world -- the identity hasher.
-#[doc(hidden)]
 #[derive(Default)]
 pub struct IdentityHasher {
     hash: u64,
