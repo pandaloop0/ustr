@@ -1,5 +1,8 @@
 # `ustr`
 
+## Pandaloop Note
+This is a fork of `ustr` which provides more access to internals such as the hasher to allow usage in an IndexMap etc.
+
 Fast, FFI-friendly string interning.
 
 [![Build Status]][travis] [![Latest Version]][crates.io] [![Docs Badge]][docs.rs]
